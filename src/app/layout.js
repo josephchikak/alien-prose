@@ -39,9 +39,10 @@ export default function RootLayout({ children }) {
             height={100}
           />
           <ul className="flex sm:gap-10 flex-row sm:text-sm  text-xs gap-4 ">
-            <li className="cursor-pointer "> <Link href="#spaces">Spaces</Link></li>
-            <li className="cursor-pointer">Gears</li>
-            <li className="cursor-pointer">About</li>
+            <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8"> <Link href="#spaces">Spaces</Link></li>
+            <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">Gears</li>
+            <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">Production Services</li>
+            <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">CLA</li>
           </ul>
           <button className="bg-[#FFD700] hidden md:flex text-black p-4 text-xs rounded-xl px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">Book</button>
         </nav>

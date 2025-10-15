@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit ">
       <main className="w-[90vw] sm:w-[80vw] h-full flex flex-col sm:grid sm:grid-cols-2 items-center p-4">
-        <div className="flex items-start justify-start h-full relative  p-4  sm:h-[80vh] flex-col gap-8">
+        <div className="flex items-start justify-start h-full relative  p-4  flex-col gap-8">
           <h1 className="text-3xl md:text-8xl font-bold w-full lg:w-[50vw] py-8 flex flex-col font-outfit">
-            ALIEN PROSE STUDIOS <span className="sm:text-lg pt-2 text-xs font-light">Creative Spaces where stories come to life</span>
+            ALIEN PROSE STUDIOS <span className="sm:text-lg pt-2 text-xs font-bold mask-radial-from-neutral-500  text-slate-900" >Freedom to create!</span>
           </h1>
           <p className="sm:w-[90%] w-full sm:text-lg font-light">
             {" "}
@@ -44,7 +44,7 @@ export default function Home() {
             alt="Hero Image"
             width={400}
             height={500}
-            className="rounded-xs sm:absolute top-0 right-1"
+            className="rounded-xs sm:absolute top-10 right-1"
           />
         </div>
       </main>

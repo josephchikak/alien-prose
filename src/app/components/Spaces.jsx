@@ -44,14 +44,14 @@ const Spaces = () => {
         .map((space) => (
           <div
             key={space.id}
-            className="sm:w-[90%] h-[80vh] bg-black relative flex gap-8 border-2 border-black flex-col items-start p-10 justify-start text-white font-outfit"
+            className="sm:w-[90%] h-full bg-black relative flex gap-8 border-2 border-black flex-col items-start p-10 justify-center text-white font-outfit"
           >
             <div className="grid grid-cols-2 gap-8">
               <Image
                 src={space.img}
                 alt={`${space.name} Space`}
                 objectFit="contain"
-                width={500}
+                width={800}
                 height={500}
                 className=""
               />
@@ -60,7 +60,7 @@ const Spaces = () => {
                   src={space.img2}
                   alt={`${space.name} Space`}
                   objectFit="contain"
-                  width={500}
+                  width={800}
                   height={500}
                   className=""
                 />
@@ -70,7 +70,7 @@ const Spaces = () => {
                   src={space.img3}
                   alt={`${space.name} Space`}
                   objectFit="contain"
-                  width={500}
+                  width={800}
                   height={500}
                   className=""
                 />
@@ -78,7 +78,9 @@ const Spaces = () => {
             </div>
 
             <h1 className="sm:text-6xl text-4xl font-bold z-1">{space.name} Space</h1>
-            <p className="mt-4 font-light text-lg  sm:w-1/2 z-1">{space.description}</p>
+            <p className="mt-4 font-light text-base  sm:w-1/2 z-1">{space.description}</p>
+          <button className="bg-[#FFD700] hidden md:flex text-black p-4 text-xs rounded-xl px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">Book Now</button>
+              
           </div>
         ))}
       <div className="absolute top-10 left-1/2 sm:left-70 transform -translate-x-1/2 flex sm:space-x-4">
