@@ -17,7 +17,7 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="w-[80vw] font-outfit justify-self-center h-20 flex items-center m-4 justify-between px-4 md:px-10 bg-black text-white rounded-2xl border-[0.5px] relative">
+      <nav className="w-[80vw] font-outfit justify-self-center h-20 flex items-center m-4 justify-between px-4 md:px-10 bg-black text-white  border-[0.5px] relative">
         {/* Logo */}
         <Link href='/' className="cursor-pointer">
         <Image
@@ -41,14 +41,16 @@ export default function Navigation() {
             Creative Learning Academy
           </li>
           <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">
-            Alien Prose Live
+            <Link href="/alienProseLive">Alien Prose Live</Link>
           </li>
         </ul>
 
         {/* Desktop Book Button */}
-        <button className="bg-[#FFD700] hidden md:flex text-black p-4 text-xs rounded-xl px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">
+        <Link href='https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143' target="_blank">
+        <button className="bg-[#FFD700] hidden md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">
           Book
         </button>
+        </Link>
 
         {/* Mobile Hamburger Menu Button */}
         <button
