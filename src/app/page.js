@@ -35,7 +35,7 @@ export default async function Home() {
           <h1 className="text-[15vw] sm:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col font-outfit">
             
             <span className="xl:pl-[10%]"> ALIEN PROSE</span>{" "}
-            <span className="sm:hidden ">STUDIOS</span>{" "}
+            <span className="sm:hidden md:hidden xl:hidden">STUDIOS</span>{" "}
             <span className="sm:text-3xl py-2 sm:absolute text-lg font-bold mask-radial-from-neutral-500  text-slate-900">
               Freedom to create!
             </span>
@@ -44,7 +44,7 @@ export default async function Home() {
         <div className="flex flex-col h-full w-full">
           <HeroSlideshow />
 
-            <span className="hidden sm:flex font-bold text-[9vw] py-2">STUDIOS</span>{" "}
+            <span className="hidden sm:block font-bold text-[9vw] py-2">STUDIOS</span>{" "}
 
 
         </div>
@@ -56,7 +56,7 @@ export default async function Home() {
           alt="street light photo"
           width={800}
           height={500}
-          sizes=" max"
+          sizes=" (max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
           // fill
           className="object-cover"
         />
