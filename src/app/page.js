@@ -32,11 +32,11 @@ export default async function Home() {
     <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit ">
       <main className="w-[90vw] sm:w-[80vw] h-full xl:min-h-[60vh] md:grid grid-cols-2  flex flex-col sm:gap-4 justify-start  items-center p-8">
         <div className="flex items-start justify-start w-full sm:h-full relative  flex-col gap-8">
-          <h1 className="text-[15vw] sm:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col font-outfit">
+          <h1 className="text-3xl text-stone-900 sm:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col font-outfit">
             
             <span className="xl:pl-[10%]"> ALIEN PROSE</span>{" "}
             <span className="sm:hidden md:hidden xl:hidden">STUDIOS</span>{" "}
-            <span className="sm:text-3xl py-2 sm:absolute text-lg font-bold mask-radial-from-neutral-500  text-slate-900">
+            <span className="sm:text-3xl py-2 sm:absolute text-sm font-bold mask-radial-from-neutral-500  text-slate-900">
               Freedom to create!
             </span>
           </h1>
