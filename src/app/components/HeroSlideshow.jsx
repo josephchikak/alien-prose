@@ -46,7 +46,7 @@ export default function HeroSlideshow() {
   };
 
   return (
-    <div className="flex w-[80vw] sm:w-full h-full relative justify-center pt-10">
+    <div className="flex w-[70vw] sm:w-full h-full relative justify-center sm:pt-10">
       <div className="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[340px] xl:h-[350px]  overflow-hidden">
         {/* Main slide image */}
         <Image

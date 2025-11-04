@@ -30,13 +30,13 @@ export default async function Home() {
 
   return (
     <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit ">
-      <main className="w-[90vw] sm:w-[80vw] h-full xl:min-h-[60vh] md:grid grid-cols-2  flex flex-col gap-4 justify-start  items-center p-8">
+      <main className="w-[90vw] sm:w-[80vw] h-full xl:min-h-[60vh] md:grid grid-cols-2  flex flex-col sm:gap-4 justify-start  items-center p-8">
         <div className="flex items-start justify-start w-full sm:h-full relative  flex-col gap-8">
-          <h1 className="text-[10vw] font-bold w-full lg:w-full py-4 flex flex-col font-outfit">
+          <h1 className="text-[15vw] sm:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col font-outfit">
             
             <span className="xl:pl-[10%]"> ALIEN PROSE</span>{" "}
             {/* <span className="xl:pl-[100%] xl:pt-8 ">STUDIOS</span>{" "} */}
-            <span className="sm:text-3xl pt-2 sm:absolute text-lg font-bold mask-radial-from-neutral-500  text-slate-900">
+            <span className="sm:text-3xl py-2 sm:absolute text-lg font-bold mask-radial-from-neutral-500  text-slate-900">
               Freedom to create!
             </span>
           </h1>
@@ -44,24 +44,25 @@ export default async function Home() {
         <div className="flex flex-col h-full w-full">
           <HeroSlideshow />
 
-            <span className="font-bold text-[9vw] ">STUDIOS</span>{" "}
+            <span className="font-bold text-[9vw] py-2">STUDIOS</span>{" "}
 
 
         </div>
       </main>
 
-      <div className="flex justify-start items-center flex-col xl:flex-row p-8 gap-8 w-[80vw] border-b-[0.5px] border-t-[0.5px] border-black ">
+      <div className="flex justify-start items-center flex-col xl:flex-row p- sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px] border-t-[0.5px] border-black ">
         <Image
           src="/assets/frontPage2.jpg"
           alt="street light photo"
           width={800}
           height={500}
+          sizes=" max"
           // fill
           className="object-cover"
         />
         <div className="xl:w-[30vw] h-full flex flex-col gap-8 justify-center items-center">
 
-        <p className="w-full text-2xl xl:text-4xl font-light border-l-[0.5px] border-black pl-5 ">
+        <p className="w-full text-xl xl:text-4xl font-light border-l-[0.5px] border-black pl-5 ">
           {" "}
           We are the one stop shop for creativity in Abuja, producing top-notch
           audio-visual content for a diverse range of clients, while also
@@ -86,7 +87,7 @@ export default async function Home() {
         id="spaces"
         className="sm:w-[80vw] w-full flex items-center flex-col sm:flex-row  justify-center  relative border-y-[0.5px] border-black "
       >
-           <p className=" w-[80vw] pt-4 xl:w-[40vw] text-2xl xl:text-4xl pb-8 font-light border-x-[0.5px] border-black px-5">
+           <p className=" w-[80vw] pt-4 xl:w-[40vw] text-xl xl:text-4xl pb-8 font-light border-x-[0.5px] border-black px-5">
           We are simply building capacity to meet already existing demand gaps.
           Gaps in access to quality tools and productive studio spaces Gaps in
           knowledge, skills and experience for innovative creatives.
