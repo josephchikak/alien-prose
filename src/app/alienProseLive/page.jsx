@@ -37,7 +37,7 @@ const page = async() => {
   const richTextOptions = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="mb-4 leading-relaxed text-xl">{children}</p>
+        <p className="mb-4 leading-relaxed text-base sm:text-lg md:text-xl">{children}</p>
       ),
       [BLOCKS.HEADING_1]: (node, children) => (
         <h1 className="text-3xl font-bold mb-6 mt-8">{children}</h1>
@@ -54,16 +54,17 @@ const page = async() => {
   return (
     <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit "> 
     <main className='w-[90vw] sm:w-[80vw] min-h-screen flex flex-col gap-4 items-start justify-start text-black font-outfit p-8'>
-        <h1 className='text-4xl'> {alienProseLiveData.title}</h1>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl'> {alienProseLiveData.title}</h1>
         {imageUrl && (
           <Image
             src={imageUrl}
             alt={alienProseLiveData.heroImages?.[0]?.fields?.title || 'Hero Image'}
             width={800}
             height={600}
+            className="w-full h-auto max-w-4xl"
           />
         )}
-        <div className="w-2/3 text-gray-800">
+        <div className="w-full sm:w-5/6 md:w-4/5 lg:w-3/4 xl:w-2/3 text-gray-800">
           {alienProseLiveData.introText ? 
             documentToReactComponents(alienProseLiveData.introText, richTextOptions) : 
             <></>

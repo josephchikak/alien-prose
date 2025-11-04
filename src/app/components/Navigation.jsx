@@ -19,37 +19,40 @@ export default function Navigation() {
     <>
       <nav className="w-[80vw] font-outfit justify-self-center h-20 flex items-center m-4 justify-between px-4 md:px-10 bg-black text-white  border-[0.5px] relative">
         {/* Logo */}
-        <Link href='/' className="cursor-pointer">
-        <Image
-          className="text-white"
-          src="/assets/logo.png"
-          alt="Logo"
-          width={60}
-          height={100}
-        />
+        <Link href="/" className="cursor-pointer">
+          <Image
+            className="text-white"
+            src="/assets/logo.png"
+            alt="Logo"
+            width={60}
+            height={100}
+          />
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 lg:gap-10 flex-row text-sm">
-          <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">
-            <Link href="/spaces">Production</Link>
+        <ul className="hidden md:flex gap-6 lg:gap-10 flex-row text-xs xl:text-sm">
+              <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center  p-4 hover:text-black rounded-xl px-8">
+                <Link href="/spaces">Production</Link>
           </li>
-          <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">
+          <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center  p-4 hover:text-black rounded-xl px-8">
             <Link href="/spaces">Rentals</Link>
           </li>
-          <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">
+          <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center   p-4 hover:text-black rounded-xl px-8">
             Creative Learning Academy
           </li>
-          <li className="cursor-pointer hover:bg-[#FFD700] p-4 hover:text-black rounded-xl px-8">
+          <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center  p-4 hover:text-black rounded-xl px-8">
             <Link href="/alienProseLive">Alien Prose Live</Link>
           </li>
         </ul>
 
         {/* Desktop Book Button */}
-        <Link href='https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143' target="_blank">
-        <button className="bg-[#FFD700] hidden md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">
-          Book
-        </button>
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143"
+          target="_blank"
+        >
+          <button className="bg-[#FFD700] hidden md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">
+            Book
+          </button>
         </Link>
 
         {/* Mobile Hamburger Menu Button */}
@@ -86,7 +89,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-black text-white transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+        className={`fixed top-0 right-0 h-full w-72 sm:w-80 bg-black text-white transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

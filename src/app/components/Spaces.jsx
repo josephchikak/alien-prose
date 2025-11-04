@@ -45,8 +45,8 @@ const Spaces = () => {
       id: 4,
       name: "Gear",
       description: "Rent our top-notch audio-visual equipment for your creative projects. We offer cameras, microphones, lighting kits, and more to help you achieve professional results.",
-      img: "/assets/video.jpg",
-        img2: "/assets/video2.jpg",
+      img: "/assets/guitar.jpg",
+        img2: "/assets/console.jpg",
       link: 'https://docs.google.com/forms/d/e/1FAIpQLScOVuSJ8SPuQiDlHryZTt-U3F6ujtzlgAHkkCZ7qNxIKbDnxg/viewform?usp=sharing&ouid=115349378318019815143',
 
     },
@@ -61,7 +61,7 @@ const Spaces = () => {
         .map((space) => (
           <div
             key={space.id}
-            className="w-full h-full bg-black relative flex gap-8 border-2 border-black flex-col items-start p-20 justify-center text-white font-outfit"
+            className="w-full h-full bg-black relative flex gap-8 border-2 border-black flex-col items-start p-8 sm:p-20 pt-20  justify-center text-white font-outfit"
           >
             <div className="grid grid-cols-2 gap-8">
               <Image
@@ -70,6 +70,7 @@ const Spaces = () => {
                 objectFit="contain"
                 width={800}
                 height={500}
+                sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 40vw, 35vw"
                 className=""
               />
               {space.img2 ? (
@@ -79,6 +80,7 @@ const Spaces = () => {
                   objectFit="contain"
                   width={800}
                   height={500}
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 40vw, 35vw"
                   className=""
                 />
               ) : null}
@@ -89,6 +91,7 @@ const Spaces = () => {
                   objectFit="contain"
                   width={800}
                   height={500}
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 40vw, 35vw"
                   className=""
                 />
               ) : null}
@@ -107,7 +110,7 @@ const Spaces = () => {
             whileHover={{ scale: 1.1 }}
             key={space.id}
             onClick={() => setActiveSpace(space.id)}
-            className={`px-2 py-1 sm:px-4 sm:py-2 border-2 border-slate-800 cursor-pointer ${
+            className={`px-2 text-xs py-1 sm:px-4 sm:py-2 border-2 border-slate-800 cursor-pointer ${
               activeSpace === space.id
                 ? "bg-primary text-black"
                 : "bg-black text-white"
