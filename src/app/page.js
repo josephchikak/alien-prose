@@ -35,7 +35,7 @@ export default async function Home() {
           <h1 className="text-[15vw] sm:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col font-outfit">
             
             <span className="xl:pl-[10%]"> ALIEN PROSE</span>{" "}
-            {/* <span className="xl:pl-[100%] xl:pt-8 ">STUDIOS</span>{" "} */}
+            <span className="sm:hidden ">STUDIOS</span>{" "}
             <span className="sm:text-3xl py-2 sm:absolute text-lg font-bold mask-radial-from-neutral-500  text-slate-900">
               Freedom to create!
             </span>
@@ -44,13 +44,13 @@ export default async function Home() {
         <div className="flex flex-col h-full w-full">
           <HeroSlideshow />
 
-            <span className="font-bold text-[9vw] py-2">STUDIOS</span>{" "}
+            <span className="hidden sm:flex font-bold text-[9vw] py-2">STUDIOS</span>{" "}
 
 
         </div>
       </main>
 
-      <div className="flex justify-start items-center flex-col xl:flex-row p- sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px] border-t-[0.5px] border-black ">
+      <div className="flex justify-start items-center flex-col xl:flex-row pt-2 sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px] border-t-[0.5px] border-black ">
         <Image
           src="/assets/frontPage2.jpg"
           alt="street light photo"
