@@ -47,7 +47,7 @@ export default function Home() {
             
             <span className="xl:pl-[10%]"> ALIEN PROSE STUDIOS</span>{" "}
             {/* <span className="">STUDIOS</span>{" "} */}
-            <span className="sm:text-2xl py-2 absolute text-sm -bottom-30 right-0 sm:top-[0]  sm:right-10 font-bold mask-radial-from-neutral-300  text-black">
+            <span className="sm:text-2xl py-2 sm:absolute text-sm -bottom-30 right-0 sm:top-[0]  sm:right-10 font-bold mask-radial-from-neutral-300  text-black">
               Freedom to Create!
             </span>
           </h1>
