@@ -1,31 +1,28 @@
 "use client";
 
-import { createContext, useContext, useMemo } from 'react';
-import { createClient } from 'contentful';
+import { createContext, useContext } from 'react';
 
 // Create the Context
 const ContentfulContext = createContext(null);
 
 // Create the Provider Component
 export function ContentfulProvider({ children }) {
-  // Create the Contentful client using useMemo to avoid recreating it on every render
-  const client = useMemo(() => {
-  
-    if (!process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID || 
-        !process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN) {
-      console.warn('Contentful environment variables not found');
-      return null;
+  // Simple fetch-based client that uses our secure API route
+  const client = {
+    getEntries: async ({ content_type = 'slide', order = 'fields.order' }) => {
+      try {
+        const response = await fetch(`/api/contentful?content_type=${content_type}&order=${order}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const items = await response.json();
+        return { items };
+      } catch (error) {
+        console.error('Error fetching from API:', error);
+        return { items: [] };
+      }
     }
-
-    const contentfulClient = createClient({
-      space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-      environment: process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT || "master",
-      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-    });
-    
-   
-    return contentfulClient;
-  }, []);
+  };
 
   return (
     <ContentfulContext.Provider value={client}>
@@ -47,21 +44,16 @@ export function useContentful() {
 
 // Helper function to fetch slides
 export async function fetchSlides(client) {
-//   console.log('fetchSlides called with client:', !!client);
-  
   if (!client) {
     console.warn('Contentful client not available');
     return [];
   }
 
   try {
-    // console.log('Fetching slides from Contentful...');
     const response = await client.getEntries({
       content_type: "slide",
-      include: 2,
       order: "fields.order",
     });
- 
     return response.items || [];
   } catch (error) {
     console.error("Error fetching slides:", error);
