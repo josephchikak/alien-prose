@@ -42,13 +42,13 @@ export default function Home() {
   return (
     <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit overflow-hidden">
       <main className="w-[90vw] sm:w-[80vw] min-h-[40vh] sm:min-h-[60vh]  flex flex-col sm:gap-4 justify-start relative  items-center p-8">
-        <div className="flex items-start justify-start w-full sm:h-full  flex-col gap-8">
+        <div className="flex items-start justify-start w-full sm:h-full relative  flex-col gap-8">
           <h1 className="text-6xl sm:text-9xl md:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col relative font-outfit">
             
             <span className="xl:pl-[10%]"> ALIEN PROSE STUDIOS</span>{" "}
             {/* <span className="">STUDIOS</span>{" "} */}
-            <span className="sm:text-3xl py-2 sm:absolute text-sm font-bold sm:mask-radial-from-neutral-500  text-slate-900">
-              Freedom to create!
+            <span className="sm:text-2xl py-2 absolute text-sm -bottom-30 right-0 sm:top-[0]  sm:right-10 font-bold mask-radial-from-neutral-300  text-black">
+              Freedom to Create!
             </span>
           </h1>
           <HeroSlideshow />
