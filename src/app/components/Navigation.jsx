@@ -30,8 +30,8 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 lg:gap-10 flex-row text-xs xl:text-sm">
-              <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center  p-4 hover:text-black rounded-xl px-8">
+        <ul className="hidden md:flex gap-6 lg:gap-10 flex-row text-xs xl:text-sm justify-center items-center">
+              <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center h-full items-center p-4 hover:text-black rounded-xl px-8">
                 <Link href="/spaces">Production</Link>
           </li>
           <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center  p-4 hover:text-black rounded-xl px-8">

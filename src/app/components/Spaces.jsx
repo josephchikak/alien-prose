@@ -1,58 +1,91 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {motion} from "motion/react"
 import Link from "next/link";
+import { useContentful } from "../contexts/ContentfulContext";
+
+
+
 
 const Spaces = () => {
-  const [spaces, setSpaces] = useState([
+
+    const client = useContentful();
+    const [images, setImages] = useState([]);
+
+  // Fetch images from Contentful
+  useEffect(() => {
+    async function fetchImages() {
+      if (!client) return;
+
+      try {
+        const response = await client.getEntries({
+          content_type: "slide",
+          include: 2,
+        });
+        setImages(response.items); // Use setImages instead of push
+  
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    }
+
+    fetchImages();
+
+  }, [client]);
+
+  // Helper function to get image URL
+  const getImageUrl = (index, imageIndex = 0) => {
+    const url = images[index]?.fields?.images[imageIndex]?.fields?.file?.url;
+    return url ? `https:${url}` : null;
+  };
+
+  const [soaces, setSpaces] = useState(0);
+
+  const spaces = [
     {
       id: 0,
-      name: "Live Recording Space",
+      name: "Live Recording Studio",
       description: "Per hour use of our fully equipped live recording studio. Spacious and soundproofed audio studio designed for live music recordings, with live music instruments(Drums set, electric guitar, bass and synth keyboards). We offer options of a lead microphone and backups, a standard digital mixing consol in the control room, house and on the wall felxible product light to support videos. Constant power supply in an air conditioned spacesd ensuite with a convinence room for your comfort",
       img: "/assets/live.jpg",
       img2: "/assets/live2.jpg",
       link: 'https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143',
-    //   img3: "/assets/live3.jpg",
     },
     {
       id: 1,
-      name: "Digital Space",
+      name: "Digital Studio",
       description: "Per hour use of our fully equipped digital recording studio. Spacious and soundproofed audio studio designed for voice overs, music recording, music production and mixing & mastering.",
       img: "/assets/digital.jpg",
       link: 'https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143',
-
     },
     {
       id: 2,
-      name: "Podcast Space",
+      name: "Podcast Studio",
       description: "Per hour use of our fully equipped podcast recording studio. Soundproofed and designed for podcast recordings, interviews and voice overs. We offer 4 Shure SM7B dynamic microphones, a beautiful podcast table with 4 adjustable arms and well designed space for video podcast recordings.",
       img: "/assets/podcast.jpg",
       link: 'https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143',
-
     },
     {
       id: 3,
-      name: "Video Space",
+      name: "Video Studio",
       description: "Per hour use of our fully equipped video recording studio. Spacious and soundproofed video studio designed for music videos, interviews, short films and commercials. We offer an Apputure 300D Mark 3 Lights and an Amaran 300C with soft box and stands.",
       img: "/assets/video.jpg",
-        img2: "/assets/video2.jpg",
+      img2: "/assets/video2.jpg",
       link: 'https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143',
-
     },
-      {
+    {
       id: 4,
-      name: "Gear",
+      name: "Gears",
       description: "Rent our top-notch audio-visual equipment for your creative projects. We offer cameras, microphones, lighting kits, and more to help you achieve professional results.",
-      img: "/assets/guitar.jpg",
-        img2: "/assets/console.jpg",
+      img: getImageUrl(3) || "/assets/guitar.jpg",
+      img2: getImageUrl(6) || "/assets/console.jpg",
       link: 'https://docs.google.com/forms/d/e/1FAIpQLScOVuSJ8SPuQiDlHryZTt-U3F6ujtzlgAHkkCZ7qNxIKbDnxg/viewform?usp=sharing&ouid=115349378318019815143',
-
     },
-  ]);
+  ];
 
   const [activeSpace, setActiveSpace] = useState(0);
+
 
   return (
     <>
@@ -67,7 +100,7 @@ const Spaces = () => {
               <Image
                 src={space.img}
                 alt={`${space.name} Space`}
-                objectFit="contain"
+                // objectFit="contain"
                 width={800}
                 height={500}
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 40vw, 35vw"
@@ -77,10 +110,10 @@ const Spaces = () => {
                 <Image
                   src={space.img2}
                   alt={`${space.name} Space`}
-                  objectFit="contain"
+                  // objectFit="contain"
                   width={800}
                   height={500}
-                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 40vw, 35vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 90vw, (max-width: 1024px) 40vw, 35vw"
                   className=""
                 />
               ) : null}
@@ -88,7 +121,7 @@ const Spaces = () => {
                 <Image
                   src={space.img3}
                   alt={`${space.name} Space`}
-                  objectFit="contain"
+                  // objectFit="contain"
                   width={800}
                   height={500}
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 40vw, 35vw"
@@ -98,7 +131,7 @@ const Spaces = () => {
             </div>
 
             <h1 className="sm:text-6xl text-4xl font-bold z-1">{space.name} </h1>
-            <p className="mt-4 font-light text-base  sm:w-1/2 z-1">{space.description}</p>
+            <p className="mt-4 font-light text-sm sm:text-base  sm:w-1/2 z-1">{space.description}</p>
             <Link href={space.link} target="_blank"> 
           <button className="bg-[#FFD700] md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">Rent Now</button>
                </Link>

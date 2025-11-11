@@ -1,53 +1,67 @@
+"use client";
+
 import Image from "next/image";
 import Spaces from "./components/Spaces";
 import Featured from "./components/Featured";
 import Slideshow from "./components/Slideshow";
 import HeroSlideshow from "./components/HeroSlideshow";
 import Link from "next/link";
-import { createClient } from "contentful";
+import { useContentful, fetchSlides } from "./contexts/ContentfulContext";
+import { useState, useEffect } from "react";
 
-export default async function Home() {
-  // Initialize Contentful client
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    environment: process.env.CONTENTFUL_ENVIRONMENT || "master",
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
+export default function Home() {
+  const [slides, setSlides] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const client = useContentful();
 
-  // Fetch slides from Contentful
-  let slides = [];
-  try {
-    const response = await client.getEntries({
-      content_type: "slide",
-      include: 2,
-      order: "fields.order", // Sort by the order field in ascending order
-    });
-    slides = response.items || [];
-    console.log(`Found ${slides.length} slides`);
-  } catch (error) {
-    console.error("Error fetching slides:", error);
-  }
+  // Fetch slides from Contentful using context
+  useEffect(() => {
+    async function loadSlides() {
+      console.log('Loading slides...');
+      console.log('Client available:', !!client);
+      
+      try {
+        if (!client) {
+          console.log('No client available, skipping fetch');
+          setLoading(false);
+          return;
+        }
+        
+        const fetchedSlides = await fetchSlides(client);
+        console.log('Fetched slides:', fetchedSlides?.length);
+        setSlides(fetchedSlides);
+      } catch (error) {
+        console.error("Error fetching slides:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
 
+    loadSlides();
+  }, [client]);
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit ">
-      <main className="w-[90vw] sm:w-[80vw] h-full xl:min-h-[60vh] md:grid grid-cols-2  flex flex-col sm:gap-4 justify-start  items-center p-8">
-        <div className="flex items-start justify-start w-full sm:h-full relative  flex-col gap-8">
-          <h1 className="text-3xl sm:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col font-outfit">
+    <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit overflow-hidden">
+      <main className="w-[90vw] sm:w-[80vw] min-h-[40vh] sm:min-h-[60vh]  flex flex-col sm:gap-4 justify-start relative  items-center p-8">
+        <div className="flex items-start justify-start w-full sm:h-full  flex-col gap-8">
+          <h1 className="text-6xl sm:text-9xl md:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col relative font-outfit">
             
-            <span className="xl:pl-[10%]"> ALIEN PROSE</span>{" "}
-            <span className="sm:hidden md:hidden xl:hidden">STUDIOS</span>{" "}
-            <span className="sm:text-3xl py-2 sm:absolute text-sm font-bold mask-radial-from-neutral-500  text-slate-900">
+            <span className="xl:pl-[10%]"> ALIEN PROSE STUDIOS</span>{" "}
+            {/* <span className="">STUDIOS</span>{" "} */}
+            <span className="sm:text-3xl py-2 sm:absolute text-sm font-bold sm:mask-radial-from-neutral-500  text-slate-900">
               Freedom to create!
             </span>
           </h1>
-        </div>
-        <div className="flex flex-col h-full w-full">
           <HeroSlideshow />
 
-            <span className="hidden sm:block font-bold text-[9vw] py-2">STUDIOS</span>{" "}
-
 
         </div>
+        {/* <div className=" flex flex-col h-full w-full"> */}
+
+            {/* <span className="hidden sm:block font-bold text-[9vw] py-2">STUDIOS</span>{" "} */}
+
+
+        {/* </div> */}
+
       </main>
 
       <div className="flex justify-start items-center flex-col xl:flex-row pt-2 sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px] border-t-[0.5px] border-black ">
@@ -101,7 +115,13 @@ export default async function Home() {
           className="object-cover"
         /> */}
         {/* <Spaces /> */}
-        <Slideshow slides={slides} />
+        {loading ? (
+          <div className="flex justify-center items-center h-64">
+            <div className="text-lg">Loading slides...</div>
+          </div>
+        ) : (
+          <Slideshow slides={slides} />
+        )}
       </main>
       {/* <h2 className="text-xlg sm:text-2xl font-light text-black py-8">We can bring your creative vision to life</h2> */}
 

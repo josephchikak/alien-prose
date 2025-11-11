@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./globals.css";
 import Link from "next/link";
 import Navigation from "./components/Navigation.jsx";
+import { ContentfulProvider } from "./contexts/ContentfulContext.jsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
       > 
-      <div className="w-full flex justify-center">
-        <Navigation />
-      </div>
-        {children}
+        <ContentfulProvider>
+          <div className="w-full flex justify-center">
+            <Navigation />
+          </div>
+          {children}
         <div className="w-full flex justify-center">
           <footer className="flex flex-col gap-8 sm:grid grid-cols-3 h-full bg-black w-[80vw] m-8  p-8 sm:p-20 items-center font-light justify-center text-xs sm:text-md">
             <div className="flex flex-col gap-4 text-white w-full justify-center  h-full">
@@ -86,6 +88,7 @@ export default function RootLayout({ children }) {
             </nav>
           </footer>
         </div>
+        </ContentfulProvider>
       </body>
     </html>
   );
