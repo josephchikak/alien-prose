@@ -31,16 +31,16 @@ export default function Navigation() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 lg:gap-10 flex-row text-xs xl:text-sm justify-center items-center">
-              <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center h-full items-center p-4 hover:text-black rounded-xl px-8">
+              <li className="cursor-pointer hover:bg-primary flex justify-center h-full items-center p-4 hover:text-black px-8">
                 <Link href="/spaces">Production</Link>
           </li>
-          <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center  p-4 hover:text-black rounded-xl px-8">
+          <li className="cursor-pointer hover:bg-primary flex justify-center items-center  p-4 hover:text-black px-8">
             <Link href="/spaces">Rentals</Link>
           </li>
-          <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center   p-4 hover:text-black rounded-xl px-8">
+          <li className="cursor-pointer hover:bg-primary flex justify-center items-center   p-4 hover:text-black px-8">
             Creative Learning Academy
           </li>
-          <li className="cursor-pointer hover:bg-[#FFD700] flex justify-center items-center  p-4 hover:text-black rounded-xl px-8">
+          <li className="cursor-pointer hover:bg-primary flex justify-center items-center  p-4 hover:text-black px-8">
             <Link href="/alienProseLive">Alien Prose Live</Link>
           </li>
         </ul>
@@ -50,7 +50,7 @@ export default function Navigation() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143"
           target="_blank"
         >
-          <button className="bg-[#FFD700] hidden md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">
+          <button className="bg-primary hidden md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">
             Book
           </button>
         </Link>

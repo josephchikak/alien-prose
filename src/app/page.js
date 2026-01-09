@@ -40,18 +40,39 @@ export default function Home() {
     loadSlides();
   }, [client]);
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center justify-start text-black font-outfit overflow-hidden">
-      <main className="w-[90vw] sm:w-[80vw] min-h-[40vh] sm:min-h-[60vh]  flex flex-col sm:gap-4 justify-start relative  items-center p-8">
-        <div className="flex items-start justify-start w-full sm:h-full relative  flex-col gap-8">
-          <h1 className="text-6xl sm:text-9xl md:text-[10vw] font-bold w-full lg:w-full sm:py-4 flex flex-col relative font-outfit">
-            
-            <span className="xl:pl-[10%]"> ALIEN PROSE STUDIOS</span>{" "}
+    <main className="w-screen min-h-screen   flex flex-col items-center justify-start text-black font-outfit overflow-hidden">
+      <section className="w-[90vw]  bg-gradient-to-b sm:w-[80vw] min-h-[30vh] sm:min-h-[40vh]  flex flex-col sm:gap-4 justify-start relative  items-center p-8">
+        <div className="flex items-center justify-start w-full sm:h-full relative  flex-row gap-8 ">
+          <h1 className="text-6xl sm:text-9xl gap-4  text-black md:text-[8vw] font-bold w-full lg:w-full sm:py-4 flex flex-col relative font-outfit">
+            ALIEN   
+            <span className=" "> PROSE </span>{" "}
+
+            <span className=" "> STUDIOS </span>{" "}
+
             {/* <span className="">STUDIOS</span>{" "} */}
-            <span className="sm:text-2xl py-2 sm:absolute text-sm -bottom-30 right-0 sm:top-[0]  sm:right-10 font-bold mask-radial-from-neutral-300  text-black">
+          
+
+            <span className="sm:text-4xl text-sm sm:absolute -z-10 right-0  sm:right-1   font-bold mask-radial-from-neutral-300  text-[#D00000]">
               Freedom to Create!
             </span>
           </h1>
-          <HeroSlideshow />
+
+            <span className="sm:text-7xl py-2 sm: text-sm  invisible sm:visible  font-bold mask-radial-from-neutral-300  text-black">
+              at Alien Prose Studios we give you the{" "}
+              <span className="font-extrabold underline decoration-4 underline-offset-4 decoration-[#D00000]">
+                freedom
+              </span>{" "}
+              to bring your creative visions to life.
+            </span>
+          {/* <HeroSlideshow /> */}
+          {/* <Image
+            src="/assets/frontPage2.jpg"
+            alt="Hero Image"
+            width={1200}
+            height={600}
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
+            className="object-cover rounded-lg"
+          /> */}
 
 
         </div>
@@ -62,9 +83,9 @@ export default function Home() {
 
         {/* </div> */}
 
-      </main>
+      </section>
 
-      <div className="flex justify-start items-center flex-col xl:flex-row pt-2 sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px] border-t-[0.5px] border-black ">
+      <div className="flex justify-start items-center flex-col xl:flex-row pt-2 sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px]  border-black ">
         <Image
           src="/assets/frontPage2.jpg"
           alt="street light photo"
@@ -97,7 +118,7 @@ export default function Home() {
 
       {/* Contentful Slides Section */}
 
-      <main
+      <div
         id="spaces"
         className="sm:w-[80vw] w-full flex items-center flex-col sm:flex-row  justify-center  relative border-y-[0.5px] border-black "
       >
@@ -122,10 +143,10 @@ export default function Home() {
         ) : (
           <Slideshow slides={slides} />
         )}
-      </main>
+      </div>
       {/* <h2 className="text-xlg sm:text-2xl font-light text-black py-8">We can bring your creative vision to life</h2> */}
 
-      {/* <div className="p-4 sm:py-8 w-[80%] flex-row bg-black flex justify-center ">
+      {/* <main className="p-4 sm:py-8 w-[80%] flex-row bg-black flex justify-center ">
         {/* <Featured /> */}
 
       {/* </div>  */}
@@ -174,6 +195,6 @@ export default function Home() {
           </ul>
         </nav>
       </footer> */}
-    </div>
+    </main>
   );
 }

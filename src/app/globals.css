@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFD700;
+  --background: #FFC933;
   --foreground: #171717;
 }
 
@@ -12,12 +12,12 @@
   --font-mono: var(--font-geist-mono);
   --font-outfit: var(--font-outfit);
 
-  --color-primary: #FFD700;
+  --color-primary: #FFC933;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FFD700;
+    --background: #FFC933;
     --foreground: #ededed;
   }
 }
