@@ -2,16 +2,22 @@
 
 import { createContext, useContext } from 'react';
 
-// Create the Context
 const ContentfulContext = createContext(null);
 
-// Create the Provider Component
 export function ContentfulProvider({ children }) {
-  // Simple fetch-based client that uses our secure API route
   const client = {
-    getEntries: async ({ content_type = 'slide', order = 'fields.order' }) => {
+    getEntries: async ({ content_type = 'slide', order, include = 2 }) => {
       try {
-        const response = await fetch(`/api/contentful?content_type=${content_type}&order=${order}`);
+        const params = new URLSearchParams({
+          content_type,
+          include: include.toString()
+        });
+        
+        if (order) {
+          params.append('order', order);
+        }
+        
+        const response = await fetch(`/api/contentful?${params.toString()}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -31,7 +37,6 @@ export function ContentfulProvider({ children }) {
   );
 }
 
-// Custom hook to use Contentful client
 export function useContentful() {
   const client = useContext(ContentfulContext);
   
@@ -40,23 +45,4 @@ export function useContentful() {
   }
   
   return client;
-}
-
-// Helper function to fetch slides
-export async function fetchSlides(client) {
-  if (!client) {
-    console.warn('Contentful client not available');
-    return [];
-  }
-
-  try {
-    const response = await client.getEntries({
-      content_type: "slide",
-      order: "fields.order",
-    });
-    return response.items || [];
-  } catch (error) {
-    console.error("Error fetching slides:", error);
-    return [];
-  }
 }

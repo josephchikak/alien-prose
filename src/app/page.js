@@ -6,7 +6,7 @@ import Featured from "./components/Featured";
 import Slideshow from "./components/Slideshow";
 import HeroSlideshow from "./components/HeroSlideshow";
 import Link from "next/link";
-import { useContentful, fetchSlides } from "./contexts/ContentfulContext";
+import { useContentful } from "./contexts/ContentfulContext";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -27,7 +27,11 @@ export default function Home() {
           return;
         }
         
-        const fetchedSlides = await fetchSlides(client);
+        const response = await client.getEntries({
+          content_type: "slide",
+          order: "fields.order",
+        });
+        const fetchedSlides = response.items;
         console.log('Fetched slides:', fetchedSlides?.length);
         setSlides(fetchedSlides);
       } catch (error) {
