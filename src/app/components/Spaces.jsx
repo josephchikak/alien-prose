@@ -18,6 +18,7 @@ const Spaces = () => {
   // Fetch images from Contentful
     useEffect(() => {
     if (!client) return;
+    
 
     async function fetchContent() {
       try {
