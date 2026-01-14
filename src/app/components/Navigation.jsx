@@ -31,9 +31,9 @@ export default function Navigation() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 lg:gap-10 flex-row text-xs xl:text-sm justify-center items-center">
-              <li className="cursor-pointer hover:bg-primary flex justify-center h-full items-center p-4 hover:text-black px-8">
+              {/* <li className="cursor-pointer hover:bg-primary flex justify-center h-full items-center p-4 hover:text-black px-8">
                 <Link href="/spaces">Production</Link>
-          </li>
+          </li> */}
           <li className="cursor-pointer hover:bg-primary flex justify-center items-center  p-4 hover:text-black px-8">
             <Link href="/spaces">Rentals</Link>
           </li>
