@@ -85,9 +85,15 @@ const Spaces = () => {
                 ? section.fields.description 
                 : section.fields.description?.content?.[0]?.content?.[0]?.value || ''}
             </p>
-            <Link href='https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143' target="_blank"> 
-          <button className="bg-[#FFD700] md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">Rent Now</button>
-               </Link>
+            <Link 
+              href={section.fields.title?.toLowerCase() === 'gears' 
+                ? 'https://docs.google.com/forms/d/e/1FAIpQLScOVuSJ8SPuQiDlHryZTt-U3F6ujtzlgAHkkCZ7qNxIKbDnxg/viewform?usp=sharing&ouid=115349378318019815143'
+                : 'https://docs.google.com/forms/d/e/1FAIpQLSdUDW8-I25QQoEycTLcTJ90FM-o63JVFWAIuzlPlKr4xLUZLA/viewform?usp=sharing&ouid=115349378318019815143'
+              } 
+              target="_blank"
+            > 
+              <button className="bg-[#FFD700] md:flex text-black p-4 text-xs  px-8 cursor-pointer border-[0.5px] hover:bg-amber-300">Rent Now</button>
+            </Link>
           </div>
         ))}
       {sections?.length > 0 && (

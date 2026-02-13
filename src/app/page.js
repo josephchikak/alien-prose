@@ -17,22 +17,22 @@ export default function Home() {
   // Fetch slides from Contentful using context
   useEffect(() => {
     async function loadSlides() {
-      console.log('Loading slides...');
-      console.log('Client available:', !!client);
-      
+      console.log("Loading slides...");
+      console.log("Client available:", !!client);
+
       try {
         if (!client) {
-          console.log('No client available, skipping fetch');
+          console.log("No client available, skipping fetch");
           setLoading(false);
           return;
         }
-        
+
         const response = await client.getEntries({
           content_type: "slide",
           order: "fields.order",
         });
         const fetchedSlides = response.items;
-        console.log('Fetched slides:', fetchedSlides?.length);
+        console.log("Fetched slides:", fetchedSlides?.length);
         setSlides(fetchedSlides);
       } catch (error) {
         console.error("Error fetching slides:", error);
@@ -48,26 +48,22 @@ export default function Home() {
       <section className="w-[90vw]  bg-gradient-to-b sm:w-[80vw] min-h-[30vh] sm:min-h-[40vh]  flex flex-col sm:gap-4 justify-start relative  items-center p-8">
         <div className="flex items-center justify-start w-full sm:h-full relative  flex-row gap-8 ">
           <h1 className="text-6xl sm:text-9xl gap-4  text-black md:text-[8vw] font-bold w-full lg:w-full sm:py-4 flex flex-col relative font-outfit">
-            ALIEN   
+            ALIEN
             <span className=" "> PROSE </span>{" "}
-
             <span className=" "> STUDIOS </span>{" "}
-
             {/* <span className="">STUDIOS</span>{" "} */}
-          
-
             <span className="sm:text-4xl text-sm sm:absolute -z-10 right-0  sm:right-1   font-bold mask-radial-from-neutral-300  text-[#D00000]">
               Freedom to Create!
             </span>
           </h1>
 
-            <span className="sm:text-7xl py-2 sm: text-sm  invisible sm:visible  font-bold mask-radial-from-neutral-300  text-black">
-              at Alien Prose Studios we give you the{" "}
-              <span className="font-extrabold underline decoration-4 underline-offset-4 decoration-[#D00000]">
-                freedom
-              </span>{" "}
-              to bring your creative visions to life.
-            </span>
+          <span className="sm:text-7xl py-2 sm: text-sm  invisible sm:visible  font-bold mask-radial-from-neutral-300  text-black">
+            at Alien Prose Studios we give you the{" "}
+            <span className="font-extrabold underline decoration-4 underline-offset-4 decoration-[#D00000]">
+              freedom
+            </span>{" "}
+            to bring your creative visions to life.
+          </span>
           {/* <HeroSlideshow /> */}
           {/* <Image
             src="/assets/frontPage2.jpg"
@@ -77,16 +73,12 @@ export default function Home() {
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
             className="object-cover rounded-lg"
           /> */}
-
-
         </div>
         {/* <div className=" flex flex-col h-full w-full"> */}
 
-            {/* <span className="hidden sm:block font-bold text-[9vw] py-2">STUDIOS</span>{" "} */}
-
+        {/* <span className="hidden sm:block font-bold text-[9vw] py-2">STUDIOS</span>{" "} */}
 
         {/* </div> */}
-
       </section>
 
       <div className="flex justify-start items-center flex-col xl:flex-row pt-2 sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px]  border-black ">
@@ -100,24 +92,17 @@ export default function Home() {
           className="object-cover"
         />
         <div className="xl:w-[30vw] h-full flex flex-col gap-8 justify-center items-center">
+          <p className="w-full text-xl xl:text-4xl font-light border-l-[0.5px] border-black pl-5 ">
+            {" "}
+            We are the one stop shop for creativity in Abuja, producing
+            top-notch audio-visual content for a diverse range of clients, while
+            also empowering fellow content creators and creatives with access to
+            equipment & studio spaces at a reasonable cost.
+          </p>
+          {/* <div className="flex w-full justify-center py-10"> */}
 
-        <p className="w-full text-xl xl:text-4xl font-light border-l-[0.5px] border-black pl-5 ">
-          {" "}
-          We are the one stop shop for creativity in Abuja, producing top-notch
-          audio-visual content for a diverse range of clients, while also
-          empowering fellow content creators and creatives with access to
-          equipment & studio spaces at a reasonable cost.
-        </p>
-        {/* <div className="flex w-full justify-center py-10"> */}
-
-
-      
-
-        {/* </div> */}
-
-     
+          {/* </div> */}
         </div>
-
       </div>
 
       {/* Contentful Slides Section */}
@@ -126,10 +111,9 @@ export default function Home() {
         id="spaces"
         className="sm:w-[80vw] w-full flex items-center flex-col sm:flex-row  justify-center  relative border-y-[0.5px] border-black "
       >
-           <p className=" w-[80vw] pt-4 xl:w-[40vw] text-xl xl:text-4xl pb-8 font-light border-x-[0.5px] border-black px-5">
-          We are simply building capacity to meet already existing demand gaps.
-          Gaps in access to quality tools and productive studio spaces Gaps in
-          knowledge, skills and experience for innovative creatives.
+        <p className=" w-[80vw] pt-4 xl:w-[40vw] text-xl xl:text-4xl pb-8 font-light border-x-[0.5px] border-black px-5">
+          Abuja creatives have the talent. We just needed the space. Alien
+          Prose.
         </p>
         {/* <Image
           src="/assets/frontPage.jpg"
