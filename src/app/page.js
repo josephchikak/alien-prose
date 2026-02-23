@@ -97,12 +97,10 @@ export default function Home() {
           <span className="font-black text-red-600"> Alien
           Prose.</span>
         </p>
-  
-          {/* <div className="flex w-full justify-center py-10"> */}
 
-          {/* </div> */}
         </div>
       </div>
+
 
       {/* Contentful Slides Section */}
 
