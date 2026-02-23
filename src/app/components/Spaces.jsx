@@ -72,7 +72,7 @@ const Spaces = () => {
                       alt={`${section.fields.title} Space`}
                       width={800}
                       height={500}
-                      sizes="50vw"
+                       sizes="(max-width: 1024px) 50vw, 800px"
                       className="w-full h-auto"
                     />
                   </div>
