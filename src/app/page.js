@@ -117,14 +117,7 @@ export default function Home() {
             equipment & studio spaces at a reasonable cost.
           </p>
      
-        {/* <Image
-          src="/assets/frontPage.jpg"
-          alt="Spaces"
-          width={1000}
-          height={500}
-          // layout="fill"
-          className="object-cover"
-        /> */}
+     
         {/* <Spaces /> */}
         {loading ? (
           <div className="flex justify-center items-center h-64">
