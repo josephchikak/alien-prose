@@ -88,7 +88,7 @@ export default function Home() {
           width={800}
           height={500}
           sizes=" (max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
-          // fill
+       
           className="object-cover"
         />
         <div className="xl:w-[30vw] h-full flex flex-col gap-8 justify-center items-center">
