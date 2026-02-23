@@ -92,13 +92,12 @@ export default function Home() {
           className="object-cover"
         />
         <div className="xl:w-[30vw] h-full flex flex-col gap-8 justify-center items-center">
-          <p className="w-full text-xl xl:text-4xl font-light border-l-[0.5px] border-black pl-5 ">
-            {" "}
-            We are the one stop shop for creativity in Abuja, producing
-            top-notch audio-visual content for a diverse range of clients, while
-            also empowering fellow content creators and creatives with access to
-            equipment & studio spaces at a reasonable cost.
-          </p>
+         <p className=" w-[80vw] pt-4 xl:w-[30vw] text-xl xl:text-4xl pb-8 font-light border-r-[0.5px] border-black px-5">
+          Abuja creatives have the talent. We just needed the space. 
+          <span className="font-black text-red-600"> Alien
+          Prose.</span>
+        </p>
+  
           {/* <div className="flex w-full justify-center py-10"> */}
 
           {/* </div> */}
@@ -111,10 +110,15 @@ export default function Home() {
         id="spaces"
         className="sm:w-[80vw] w-full flex items-center flex-col sm:flex-row  justify-center  relative border-y-[0.5px] border-black "
       >
-        <p className=" w-[80vw] pt-4 xl:w-[40vw] text-xl xl:text-4xl pb-8 font-light border-x-[0.5px] border-black px-5">
-          Abuja creatives have the talent. We just needed the space. Alien
-          Prose.
-        </p>
+
+            <p className="w-full text-xl xl:text-4xl font-light border-l-[0.5px] border-black pl-5 ">
+            {" "}
+            We are the one stop shop for creativity in Abuja, producing
+            top-notch audio-visual content for a diverse range of clients, while
+            also empowering fellow content creators and creatives with access to
+            equipment & studio spaces at a reasonable cost.
+          </p>
+     
         {/* <Image
           src="/assets/frontPage.jpg"
           alt="Spaces"
