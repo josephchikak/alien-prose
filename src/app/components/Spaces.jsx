@@ -72,8 +72,9 @@ const Spaces = () => {
                       alt={`${section.fields.title} Space`}
                       width={800}
                       height={500}
-                       sizes="(max-width: 1024px) 50vw, 800px"
+                       sizes="(max-width: 640px) 45vw, (max-width: 768px) 48vw, (max-width: 1024px) 45vw, (max-width: 1280px) 40vw, 500px"
                       className="w-full h-auto"
+                        unoptimized={true}
                     />
                   </div>
                 ))}
