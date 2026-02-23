@@ -70,12 +70,10 @@ const Spaces = () => {
                           : "/assets/default.jpg"
                       }
                       alt={`${section.fields.title} Space`}
-                      width={1400}
-                      height={900}
-                      sizes="100%"
-                      className="w-full h-auto object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 900'%3E%3Crect fill='%23222' width='1400' height='900'/%3E%3C/svg%3E"
+                      width={800}
+                      height={500}
+                      sizes="50vw"
+                      className="w-full h-auto"
                     />
                   </div>
                 ))}
