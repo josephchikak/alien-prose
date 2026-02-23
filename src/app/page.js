@@ -95,7 +95,7 @@ export default function Home() {
          <p className=" w-[80vw] pt-4 xl:w-[30vw] text-xl xl:text-4xl pb-8 font-light border-r-[0.5px] border-black px-5">
           Abuja creatives have the talent. We just needed the space. 
           <span className="font-black text-red-600"> Alien
-          Prose.</span>
+          Prose. </span>
         </p>
 
         </div>
