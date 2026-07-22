@@ -24,7 +24,6 @@ export default function AboutPage() {
             top-notch audio-visual content for a diverse range of clients,
             while also empowering fellow content creators and creatives with
             access to equipment & studio spaces at a reasonable cost.
-            <span className="font-black text-red-600"> This is the team behind it.</span>
           </p>
         </div>
       </div>
