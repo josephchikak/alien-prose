@@ -83,12 +83,11 @@ export default function Home() {
 
       <div className="flex justify-start items-center flex-col xl:flex-row pt-2 sm:p-8 gap-8 w-[80vw] sm:border-b-[0.5px]  border-black ">
         <Image
-          src="/assets/frontPage2.jpg"
-          alt="street light photo"
+          src="/assets/console.jpg"
+          alt="Alien Prose Studios production console"
           width={800}
           height={500}
           sizes=" (max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw"
-       
           className="object-cover"
         />
         <div className="xl:w-[30vw] h-full flex flex-col gap-8 justify-center items-center">
