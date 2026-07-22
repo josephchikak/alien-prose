@@ -93,7 +93,7 @@ export default function Home() {
         />
         <div className="xl:w-[30vw] h-full flex flex-col gap-8 justify-center items-center">
          <p className=" w-[80vw] pt-4 xl:w-[30vw] text-xl xl:text-4xl pb-8 font-light border-r-[0.5px] border-black px-5">
-          Abuja creatives have the talent. We just needed the space. 
+          Abuja creatives have the talent. They just needed the space. 
           <span className="font-black text-red-600"> Alien
           Prose. </span>
         </p>
