@@ -84,6 +84,9 @@ export default function RootLayout({ children }) {
                 <li className="cursor-pointer hover:bg-[#FFD700] hover:text-black p-4 rounded-xl transition-colors duration-200">
                   <span>Alien Prose Live</span>
                 </li>
+                <li className="cursor-pointer hover:bg-[#FFD700] hover:text-black p-4 rounded-xl transition-colors duration-200">
+                  <Link href="/about">About</Link>
+                </li>
               </ul>
             </nav>
           </footer>

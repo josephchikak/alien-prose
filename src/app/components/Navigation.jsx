@@ -43,6 +43,9 @@ export default function Navigation() {
           <li className="cursor-pointer hover:bg-primary flex justify-center items-center  p-4 hover:text-black px-8">
             <Link href="/alienProseLive">Alien Prose Live</Link>
           </li>
+          <li className="cursor-pointer hover:bg-primary flex justify-center items-center  p-4 hover:text-black px-8">
+            <Link href="/about">About</Link>
+          </li>
         </ul>
 
         {/* Desktop Book Button */}
@@ -124,6 +127,11 @@ export default function Navigation() {
           </li>
           <li className="cursor-pointer hover:bg-[#FFD700] hover:text-black p-4 rounded-xl transition-colors duration-200">
             <span onClick={closeMenu}>Alien Prose Live</span>
+          </li>
+          <li className="cursor-pointer hover:bg-[#FFD700] hover:text-black p-4 rounded-xl transition-colors duration-200">
+            <Link href="/about" onClick={closeMenu}>
+              About
+            </Link>
           </li>
         </ul>
 
